@@ -1,0 +1,41 @@
+<div class="content-wrapper">
+    <div class="content">
+        <h2 class="content-head is-center">Transfusion Assessment Form</h2>
+            <form class="pure-form">
+                    <label for="age">Age (years)
+                        <input type="number" min="0" max="110"  id="age" placeholder="e.g., 34" name="_age" [(ngModel)]="age" />
+                    </label>
+                    
+                    <label for="type">Type
+                        <select required class="pure-input-1" id="type" [(ngModel)]="penetrating" [ngModelOptions]="{standalone: true}">
+                            <option [ngValue]="penyes" selected>Penetrating</option>
+                            <option [ngValue]="penno" >         Non-Penetrating</option>
+                        </select>
+                    </label>
+
+                    <label for="heartrate"> Heartrate (bpm)
+                        <input type="number" min="0" max="220"  id="heartrate" placeholder="e.g., 70" name="_heartrate" [(ngModel)]="heartrate" />
+                    </label>
+
+                    <label for="bloodpressure"> Systolic Blood Pressure (mm Hg)
+                        <input type="number" min="0" max="220"  id="bloodpressure" placeholder="e.g., 120" name="_bloodpressure" [(ngModel)]="bloodpressure" />
+                    </label>
+
+                    <label for="comascore"> Glasgow Coma Score
+                        <input type="number" min="3" max="15"  id="comascore" placeholder="e.g., 120" name="_comascore" [(ngModel)]="comascore"/>
+                    </label>
+
+                    <label> Gender </label>
+                    <table class="pure-table" style="border: 0">
+                        <tr style="border: 0">
+                            <td style="border: 0"><input type="radio" name="gender" value="male" [(ngModel)]="gender" /></td> <td style="border: 0">Male </td> 
+                            <td style="border: 0"><input type="radio" name="gender" value="female" [(ngModel)]="gender" /></td> <td style="border: 0">Female</td> 
+                        </tr>
+                    </table>
+                    <br/>
+
+                    <button type="submit" class="pure-button" (click)="showme()">Assess</button>
+
+            </form>
+    </div>
+</div>
