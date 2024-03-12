@@ -34,8 +34,10 @@
                     </table>
                     <br/>
 
-                    <button type="submit" class="pure-button" (click)="showme()">Assess</button>
+                    <button type="submit" class="pure-button" (click)="calculateScore()">Assess</button>
 
             </form>
+        <h2> Score = {{points}}</h2>
+        <h2 style="color: red" *ngIf="showWarning()"> Considered for Early Blood Transfusion</h2>
     </div>
 </div>
