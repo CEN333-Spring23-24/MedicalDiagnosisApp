@@ -1,5 +1,34 @@
 <div class="content-wrapper">
     <div class="content pure-g">
-        Vertigo works
+        <div class="pure-u-1-1">
+            <label> Loss of Consciousness </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="consciousness" value="yes" [(ngModel)]="consciousness" (change)="check()" /></td> <td style="border: 0">Yes </td> 
+                    <td style="border: 0"><input type="radio" name="consciousness" value="no" [(ngModel)]="consciousness" (change)="check()"/></td> <td style="border: 0">No</td> 
+                </tr>
+            </table>
+        </div>
+        <div class="pure-u-1-1">
+            <label> True Vertigo </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="truevertigo" value="yes" [(ngModel)]="truevertigo" (change)="check()"/></td> <td style="border: 0">Yes </td> 
+                    <td style="border: 0"><input type="radio" name="truevertigo" value="no" [(ngModel)]="truevertigo" (change)="check()"/></td> <td style="border: 0">No</td> 
+                </tr>
+            </table>
+        </div>
+        <div class="pure-u-1-1">
+            <label> Ill-Defined Dizziness </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="illdefined" value="elderly" [(ngModel)]="illdefined" (change)="check()"/></td> <td style="border: 0">Elderly </td> 
+                    <td style="border: 0"><input type="radio" name="illdefined" value="young" [(ngModel)]="illdefined" (change)="check()"/></td> <td style="border: 0">Young</td> 
+                </tr>
+            </table>
+        </div>
+        <div class="pure-u-1-1" *ngIf="showadvice[adviceindex]">
+            {{advice[adviceindex]}}
+        </div>
     </div>
 </div>
