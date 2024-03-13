@@ -17,7 +17,7 @@ export class TransfusionComponent {
   readonly penyes: boolean = true; 
   readonly penno: boolean = false; 
   gender: string;
-
+  points: number; 
   constructor(){
     this.age = 30;
     this.penetrating = "default";
@@ -25,13 +25,45 @@ export class TransfusionComponent {
     this.bloodpressure = 120; 
     this.comascore = 3; 
     this.gender = "male";
+    this.points = 0; 
   }
-  showme(){
-    console.log("Age: " + this.age);
-    console.log("penetrating: " + this.penetrating);
-    console.log("heartrate: " + this.heartrate);
-    console.log("bloodpressure: " + this.bloodpressure);
-    console.log("comascore: " + this.comascore);
-    console.log("gender: " + this.gender);
+  calculateScore(){
+    let points: number = 0; 
+    if(this.age <= 55)
+      points += 0;
+    else if (this.age >= 56 && this.age <= 70)
+      points += 1;
+    else if (this.age > 70)
+      points += 2;
+   
+   if (this.penetrating)
+      points += 2;
+   else 
+      points += 0; 
+
+   if(this.heartrate < 60)
+      points += (-4)
+   else if (this.heartrate >=60 && this.heartrate <= 119)
+      points += 0
+   else if( this.heartrate >= 120)
+      points += 3
+  
+   if(this.bloodpressure  < 90)
+      points += 7
+   else if (this.bloodpressure >= 90)
+      points += 0
+
+   if( this.comascore == 14 || this.comascore == 15) 
+      points += 0
+   else if (this.comascore >= 9 && this.comascore <= 13)
+      points += 1
+   else if (this.comascore >= 3 && this.comascore <= 8)
+      points += 3
+
+   this.points = points; 
+   console.log("Points = " + this.points);
+  }
+  showWarning(){
+    return this.points >= 5;
   }
 }
