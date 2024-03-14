@@ -1,5 +1,92 @@
 <div class="content-wrapper">
     <div class="content pure-g">
-        Vertigo works
+        <div class="pure-u-1-1">
+            <label> Loss of Consciousness </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="consciousness" value="yes" [(ngModel)]="consciousness" (change)="reassess()"/></td> <td style="border: 0">Yes </td> 
+                    <td style="border: 0"><input type="radio" name="consciousness" value="no" [(ngModel)]="consciousness" (change)="reassess()" /></td> <td style="border: 0">No</td> 
+                </tr>
+            </table>
+        </div>
+       
+        <div class="pure-u-1-1">
+            <label> True Vertigo </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="truevertigo" value="yes" [(ngModel)]="truevertigo" (change)="reassess()"/></td> <td style="border: 0">Yes </td> 
+                    <td style="border: 0"><input type="radio" name="truevertigo" value="no" [(ngModel)]="truevertigo" (change)="reassess()" /></td> <td style="border: 0">No</td> 
+                </tr>
+            </table>
+        </div>
+        <div class="pure-u-1-1">
+            <label> Ill-Defined Dizziness </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="illdefined" value="elderly" [(ngModel)]="illdefined" (change)="reassess()"/></td> <td style="border: 0">Elderly </td> 
+                    <td style="border: 0"><input type="radio" name="illdefined" value="young" [(ngModel)]="illdefined" (change)="reassess()" /></td> <td style="border: 0">Young</td> 
+                </tr>
+            </table>
+        </div>
+        <div class="pure-u-1-1">
+            <label> CNS Symptoms and Signs </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="illdefined" value="yes" [(ngModel)]="cns" (change)="reassess()"/></td> <td style="border: 0">Yes </td> 
+                    <td style="border: 0"><input type="radio" name="illdefined" value="no" [(ngModel)]="cns" (change)="reassess()" /></td> <td style="border: 0">No</td> 
+                </tr>
+            </table>
+        </div>
+        <div class="pure-u-1-1">
+            <label> Duration of Symptoms </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="duration" value="brief" [(ngModel)]="duration" (change)="reassess()"/></td> <td style="border: 0">Brief </td> 
+                    <td style="border: 0"><input type="radio" name="duration" value="constant" [(ngModel)]="duration" (change)="reassess()" /></td> <td style="border: 0">Constant</td> 
+                </tr>
+            </table>
+        </div>
+        <div class="pure-u-1-1">
+            <label> Vertigo With Movement </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="withmovement" value="yes" [(ngModel)]="withmovement" (change)="reassess()"/></td> <td style="border: 0">Yes </td> 
+                    <td style="border: 0"><input type="radio" name="withmovement" value="no" [(ngModel)]="withmovement" (change)="reassess()" /></td> <td style="border: 0">No</td> 
+                </tr>
+            </table>
+        </div>
+        <div class="pure-u-1-1">
+            <label> Hearing Loss </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="hearingloss" value="yes" [(ngModel)]="hearingloss" (change)="reassess()"/></td> <td style="border: 0">Yes </td> 
+                    <td style="border: 0"><input type="radio" name="hearingloss" value="no" [(ngModel)]="hearingloss" (change)="reassess()" /></td> <td style="border: 0">No</td> 
+                </tr>
+            </table>
+        </div>
+        <div class="pure-u-1-1">
+            <label> Tinnitis </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="tinnitis" value="yes" [(ngModel)]="tinnitis" (change)="reassess()"/></td> <td style="border: 0">Yes </td> 
+                    <td style="border: 0"><input type="radio" name="tinnitis" value="no" [(ngModel)]="tinnitis" (change)="reassess()" /></td> <td style="border: 0">No</td> 
+                </tr>
+            </table>
+        </div>
+        <div class="pure-u-1-1">
+            <label> Otitis </label>
+            <table class="pure-table" style="border: 0">
+                <tr style="border: 0">
+                    <td style="border: 0"><input type="radio" name="otitis" value="yes" [(ngModel)]="otitis" (change)="reassess()"/></td> <td style="border: 0">Yes </td> 
+                    <td style="border: 0"><input type="radio" name="otitis" value="no" [(ngModel)]="otitis" (change)="reassess()" /></td> <td style="border: 0">No</td> 
+                </tr>
+            </table>
+        </div>
     </div>
+    <div>
+        <h3>
+            {{adviceToShow}}
+        </h3>
+    </div>
+    <button class="pure-button" (click)="reset()">Reset</button>
 </div>
