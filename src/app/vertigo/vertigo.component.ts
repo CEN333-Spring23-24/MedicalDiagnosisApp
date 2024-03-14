@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-vertigo',
   standalone: true,
+  imports: [CommonModule,FormsModule],
   imports: [CommonModule,FormsModule],
   templateUrl: './vertigo.component.html',
   styleUrl: './vertigo.component.css'
