@@ -83,10 +83,12 @@
             </table>
         </div>
     </div>
-    <div>
-        <h3>
-            {{adviceToShow}}
-        </h3>
+    <div *ngIf="adviceToShow.treatment.length>0">
+        <h3> Diagnosis: {{adviceToShow.diagnosis}}</h3>
+        <h3> Treatment</h3>
+        <ol>
+            <li *ngFor="let advice of adviceToShow.treatment"> {{advice}} </li>
+        </ol>
     </div>
     <button class="pure-button" (click)="reset()">Reset</button>
 </div>
